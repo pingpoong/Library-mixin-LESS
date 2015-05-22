@@ -1,0 +1,500 @@
+// Mixin
+// PX to EM
+.font-size(@target: @font-size-base, @default: @font-size-base) {
+  font-size: round((@target / @default), 3) + 0em;
+}
+// PX to REM
+
+
+
+// Sizing shortcuts
+.size(@width, @height: @width) {
+  width: @width;
+  height: @height;
+}
+// Center-align a block level element
+.center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+// Placeholder text
+.placeholder(@color: @placeholder-color) {
+  &:-moz-placeholder            { color: @color; }
+  &::-moz-placeholder           { color: @color; }
+  &:-ms-input-placeholder       { color: @color; }
+  &::-webkit-input-placeholder  { color: @color; }
+}
+// Text overflow
+.text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+// Opacity
+.opacity(@opacity) {
+  opacity: @opacity / 100;
+  filter: ~"alpha(opacity=@{opacity})";
+}
+// Border Radius
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+// Single Corner Border Radius
+.border-top-left-radius(@radius) {
+  -webkit-border-top-left-radius: @radius;
+      -moz-border-radius-topleft: @radius;
+          border-top-left-radius: @radius;
+}
+.border-top-right-radius(@radius) {
+  -webkit-border-top-right-radius: @radius;
+      -moz-border-radius-topright: @radius;
+          border-top-right-radius: @radius;
+}
+.border-bottom-right-radius(@radius) {
+  -webkit-border-bottom-right-radius: @radius;
+      -moz-border-radius-bottomright: @radius;
+          border-bottom-right-radius: @radius;
+}
+.border-bottom-left-radius(@radius) {
+  -webkit-border-bottom-left-radius: @radius;
+      -moz-border-radius-bottomleft: @radius;
+          border-bottom-left-radius: @radius;
+}
+
+// Single Side Border Radius
+.border-top-radius(@radius) {
+  .border-top-right-radius(@radius);
+  .border-top-left-radius(@radius);
+}
+.border-right-radius(@radius) {
+  .border-top-right-radius(@radius);
+  .border-bottom-right-radius(@radius);
+}
+.border-bottom-radius(@radius) {
+  .border-bottom-right-radius(@radius);
+  .border-bottom-left-radius(@radius);
+}
+.border-left-radius(@radius) {
+  .border-top-left-radius(@radius);
+  .border-bottom-left-radius(@radius);
+}
+
+// Drop shadows
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow;
+     -moz-box-shadow: @shadow;
+          box-shadow: @shadow;
+}
+
+// Transitions
+.transition(@transition) {
+  -webkit-transition: @transition;
+     -moz-transition: @transition;
+       -o-transition: @transition;
+          transition: @transition;
+}
+.transition-delay(@transition-delay) {
+  -webkit-transition-delay: @transition-delay;
+     -moz-transition-delay: @transition-delay;
+       -o-transition-delay: @transition-delay;
+          transition-delay: @transition-delay;
+}
+.transition-duration(@transition-duration) {
+  -webkit-transition-duration: @transition-duration;
+     -moz-transition-duration: @transition-duration;
+       -o-transition-duration: @transition-duration;
+          transition-duration: @transition-duration;
+}
+.transition-property(@transition-property) {
+  -webkit-transition-property: @transition-property;
+     -moz-transition-property: @transition-property;
+       -o-transition-property: @transition-property;
+          transition-property: @transition-property;
+}
+
+// Transformations
+.rotate(@degrees) {
+  -webkit-transform: rotate(@degrees);
+     -moz-transform: rotate(@degrees);
+      -ms-transform: rotate(@degrees);
+       -o-transform: rotate(@degrees);
+          transform: rotate(@degrees);
+}
+.rotateX(@degrees) {
+  -webkit-transform: rotateX(@degrees);
+     -moz-transform: rotateX(@degrees);
+      -ms-transform: rotateX(@degrees);
+       -o-transform: rotateX(@degrees);
+          transform: rotateX(@degrees);
+}
+.rotateY(@degrees) {
+  -webkit-transform: rotateY(@degrees);
+     -moz-transform: rotateY(@degrees);
+      -ms-transform: rotateY(@degrees);
+       -o-transform: rotateY(@degrees);
+          transform: rotateY(@degrees);
+}
+.scale(@ratio) {
+  -webkit-transform: scale(@ratio);
+     -moz-transform: scale(@ratio);
+      -ms-transform: scale(@ratio);
+       -o-transform: scale(@ratio);
+          transform: scale(@ratio);
+}
+.translate(@x, @y) {
+  -webkit-transform: translate(@x, @y);
+     -moz-transform: translate(@x, @y);
+      -ms-transform: translate(@x, @y);
+       -o-transform: translate(@x, @y);
+          transform: translate(@x, @y);
+}
+.skew(@x, @y) {
+  -webkit-transform: skew(@x, @y);
+     -moz-transform: skew(@x, @y);
+      -ms-transform: skewX(@x) skewY(@y);
+       -o-transform: skew(@x, @y);
+          transform: skew(@x, @y);
+  -webkit-backface-visibility: hidden;
+}
+.translate3d(@x, @y, @z) {
+  -webkit-transform: translate3d(@x, @y, @z);
+     -moz-transform: translate3d(@x, @y, @z);
+       -o-transform: translate3d(@x, @y, @z);
+          transform: translate3d(@x, @y, @z);
+}
+.transform-origin(@x, @y) {
+  -webkit-transform-origin: @x @y;
+     -moz-transform-origin: @x @y;
+      -ms-transform-origin: @x @y;
+       -o-transform-origin: @x @y;
+          transform-origin: @x @y;
+}
+.preserve3d() {
+  -webkit-transform-style: preserve-3d;
+     -moz-transform-style: preserve-3d;
+      -ms-transform-style: preserve-3d;
+       -o-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+.perspective(@value) {
+  -webkit-perspective: @value;
+     -moz-perspective: @value;
+      -ms-perspective: @value;
+       -o-perspective: @value;
+          perspective: @value;
+}
+.animation(@value) {
+  -webkit-animation: @value;
+     -moz-animation: @value;
+      -ms-animation: @value;
+       -o-animation: @value;
+          animation: @value;
+}
+
+// Background-size
+.background-size(@value) {
+  background-size: @value;
+  -o-background-size: @value;
+  -ms-background-size: @value;
+  -moz-background-size: @value;
+  -webkit-background-size: @value;
+}
+// Center-align a block level element
+.center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+// GRADIENTS
+// --------------------------------------------------
+
+#gradient {
+
+  // Horizontal gradient, from left to right
+  //
+  // Creates two color stops, start and end, by specifying a color and position for each color stop.
+  // Color stops are not available in IE9 and below.
+  .horizontal(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%) {
+    background-image: -webkit-linear-gradient(left, color-stop(@start-color @start-percent), color-stop(@end-color @end-percent)); // Safari 5.1-6, Chrome 10+
+    background-image:  linear-gradient(to right, @start-color @start-percent, @end-color @end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+    background-repeat: repeat-x;
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color))); // IE9 and down
+  }
+
+  // Vertical gradient, from top to bottom
+  //
+  // Creates two color stops, start and end, by specifying a color and position for each color stop.
+  // Color stops are not available in IE9 and below.
+  .vertical(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%) {
+    background-image: -webkit-linear-gradient(top, @start-color @start-percent, @end-color @end-percent);  // Safari 5.1-6, Chrome 10+
+    background-image: linear-gradient(to bottom, @start-color @start-percent, @end-color @end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+    background-repeat: repeat-x;
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color))); // IE9 and down
+  }
+
+  .directional(@start-color: #555; @end-color: #333; @deg: 45deg) {
+    background-repeat: repeat-x;
+    background-image: -webkit-linear-gradient(@deg, @start-color, @end-color); // Safari 5.1-6, Chrome 10+
+    background-image: linear-gradient(@deg, @start-color, @end-color); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+  }
+  .horizontal-three-colors(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 50%; @end-color: #c3325f) {
+    background-image: -webkit-linear-gradient(left, @start-color, @mid-color @color-stop, @end-color);
+    background-image: linear-gradient(to right, @start-color, @mid-color @color-stop, @end-color);
+    background-repeat: no-repeat;
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
+  }
+  .vertical-three-colors(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 50%; @end-color: #c3325f) {
+    background-image: -webkit-linear-gradient(@start-color, @mid-color @color-stop, @end-color);
+    background-image: linear-gradient(@start-color, @mid-color @color-stop, @end-color);
+    background-repeat: no-repeat;
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
+  }
+  .radial(@inner-color: #555; @outer-color: #333) {
+    background-image: -webkit-radial-gradient(circle, @inner-color, @outer-color);
+    background-image: radial-gradient(circle, @inner-color, @outer-color);
+    background-repeat: no-repeat;
+  }
+  .striped(@color: rgba(255,255,255,.15); @angle: 45deg) {
+    background-image: -webkit-linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
+    background-image: linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
+  }
+}
+// Backface visibility
+.backface-visibility(@visibility){
+  -webkit-backface-visibility: @visibility;
+     -moz-backface-visibility: @visibility;
+          backface-visibility: @visibility;
+}
+// Box sizing
+.box-sizing(@boxmodel) {
+  -webkit-box-sizing: @boxmodel;
+     -moz-box-sizing: @boxmodel;
+          box-sizing: @boxmodel;
+}
+// Clearfix
+.clearfix() {
+  &:before, &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+// Grid System
+.make-grid-columns(@gutter: @grid-gutter-width, @row-name: ~".row") {
+  .col(@index) {
+    @item: ~"@{row-name} > .col-xs-@{index}, @{row-name} > .col-sm-@{index}, @{row-name} > .col-md-@{index}, @{row-name} > .col-lg-@{index}";
+    .col((@index + 1), @item);
+  }
+  .col(@index, @list) when (@index=< @grid-columns) {
+    @item: ~"@{row-name} > .col-xs-@{index}, @{row-name} > .col-sm-@{index}, @{row-name} > .col-md-@{index}, @{row-name} > .col-lg-@{index}";
+    .col((@index + 1), ~"@{list}, @{item}");
+  }
+  .col(@index, @list) when (@index > @grid-columns) {
+    @{list} {
+      position: relative;
+      min-height: 1px;
+      padding-left: (@gutter / 2);
+      padding-right: (@gutter / 2);
+    }
+  }
+  .col(1);
+}
+.float-grid-columns(@class) {
+  .col(@index) {
+    @item: ~".col-@{class}-@{index}";
+    .col((@index + 1), @item);
+  }
+  .col(@index, @list) when (@index=< @grid-columns) {
+    @item: ~".col-@{class}-@{index}";
+    .col((@index + 1), ~"@{list}, @{item}");
+  }
+  .col(@index, @list) when (@index > @grid-columns) {
+    @{list} {
+      float: left;
+    }
+  }
+  .col(1);
+}
+.calc-grid-column(@index, @class, @type) when (@type = width) and (@index > 0) {
+  .col-@{class}-@{index} {
+    width: percentage((@index / @grid-columns));
+  }
+}
+.calc-grid-column(@index, @class, @type) when (@type = push) and (@index > 0) {
+  .col-@{class}-push-@{index} {
+    left: percentage((@index / @grid-columns));
+  }
+}
+.calc-grid-column(@index, @class, @type) when (@type = push) and (@index = 0) {
+  .col-@{class}-push-0 {
+    left: auto;
+  }
+}
+.calc-grid-column(@index, @class, @type) when (@type = pull) and (@index > 0) {
+  .col-@{class}-pull-@{index} {
+    right: percentage((@index / @grid-columns));
+  }
+}
+.calc-grid-column(@index, @class, @type) when (@type = pull) and (@index = 0) {
+  .col-@{class}-pull-0 {
+    right: auto;
+  }
+}
+.calc-grid-column(@index, @class, @type) when (@type = offset) {
+  .col-@{class}-offset-@{index}{
+    margin-left: percentage((@index / @grid-columns));
+  }
+}
+.loop-grid-columns(@index, @class, @type) when (@index >= 0) {
+  .calc-grid-column(@index, @class, @type);
+  .loop-grid-columns((@index - 1), @class, @type);
+}
+.make-grid(@class) {
+  .float-grid-columns(@class);
+  .loop-grid-columns(@grid-columns, @class, width);
+  .loop-grid-columns(@grid-columns, @class, pull);
+  .loop-grid-columns(@grid-columns, @class, push);
+  .loop-grid-columns(@grid-columns, @class, offset);
+}
+.grid-fixed(@gutter: @grid-gutter-width) {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: (@gutter / 2);
+  padding-right: (@gutter / 2);
+  &:extend(.clearfix all);
+}
+.make-row(@gutter: @grid-gutter-width) {
+  margin-left: (@gutter / -2);
+  margin-right: (@gutter / -2);
+  &:extend(.clearfix all);
+}
+.custom-row(@gutter: @grid-gutter-width, @row-name: ~".row") {
+  @item: ~"@{row-name}";
+  @{item} {
+    .make-row(@gutter);
+  }
+  .make-grid-columns(@gutter, @row-name);
+}
+.make-xs-column(@columns; @gutter: @grid-gutter-width) {
+  position: relative;
+  float: left;
+  width: percentage((@columns / @grid-columns));
+  min-height: 1px;
+  padding-left: (@gutter / 2);
+  padding-right: (@gutter / 2);
+}
+.make-xs-column-offset(@columns) {
+  margin-left: percentage((@columns / @grid-columns));
+}
+.make-xs-column-push(@columns) {
+  left: percentage((@columns / @grid-columns));
+}
+.make-xs-column-pull(@columns) {
+  right: percentage((@columns / @grid-columns));
+}
+.make-sm-column(@columns; @gutter: @grid-gutter-width) {
+  position: relative;
+  min-height: 1px;
+  padding-left: (@gutter / 2);
+  padding-right: (@gutter / 2);
+  @media (min-width: @screen-sm-min) {
+    float: left;
+    width: percentage((@columns / @grid-columns));
+  }
+}
+.make-sm-column-offset(@columns) {
+  @media (min-width: @screen-sm-min) {
+    margin-left: percentage((@columns / @grid-columns));
+  }
+}
+.make-sm-column-push(@columns) {
+  @media (min-width: @screen-sm-min) {
+    left: percentage((@columns / @grid-columns));
+  }
+}
+.make-sm-column-pull(@columns) {
+  @media (min-width: @screen-sm-min) {
+    right: percentage((@columns / @grid-columns));
+  }
+}
+.make-md-column(@columns; @gutter: @grid-gutter-width) {
+  position: relative;
+  min-height: 1px;
+  padding-left: (@gutter / 2);
+  padding-right: (@gutter / 2);
+  @media (min-width: @screen-md-min) {
+    float: left;
+    width: percentage((@columns / @grid-columns));
+  }
+}
+.make-md-column-offset(@columns) {
+  @media (min-width: @screen-md-min) {
+    margin-left: percentage((@columns / @grid-columns));
+  }
+}
+.make-md-column-push(@columns) {
+  @media (min-width: @screen-md-min) {
+    left: percentage((@columns / @grid-columns));
+  }
+}
+.make-md-column-pull(@columns) {
+  @media (min-width: @screen-md-min) {
+    right: percentage((@columns / @grid-columns));
+  }
+}
+.make-lg-column(@columns; @gutter: @grid-gutter-width) {
+  position: relative;
+  min-height: 1px;
+  padding-left: (@gutter / 2);
+  padding-right: (@gutter / 2);
+  @media (min-width: @screen-lg-min) {
+    float: left;
+    width: percentage((@columns / @grid-columns));
+  }
+}
+.make-lg-column-offset(@columns) {
+  @media (min-width: @screen-lg-min) {
+    margin-left: percentage((@columns / @grid-columns));
+  }
+}
+.make-lg-column-push(@columns) {
+  @media (min-width: @screen-lg-min) {
+    left: percentage((@columns / @grid-columns));
+  }
+}
+.make-lg-column-pull(@columns) {
+  @media (min-width: @screen-lg-min) {
+    right: percentage((@columns / @grid-columns));
+  }
+}
+.responsive-visibility() {
+  display: block !important;
+  table& {
+    display: table;
+  }
+  tr& {
+    display: table-row !important;
+  }
+  th&,
+  td& {
+    display: table-cell !important;
+  }
+}
+.responsive-invisibility() {
+  display: none !important;
+}
+
+.@{fa-css-prefix} {
+  display: inline-block;
+  font: normal normal normal @fa-font-size-base/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
